@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url(reset.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Teko:wght@300;400;700&display=swap');
+
+/* /////////////////////////////// */
+/*               BODY              */
+/* /////////////////////////////// */
+body,html{ -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; height: 100%; font-family: 'Teko', sans-serif; }
+*{ box-sizing: border-box; text-decoration: none; outline: none; }
+#root{ height: 100%; }
+
+/* /////////////////////////////// */
+/*          TYPOS & COULEURS       */
+/* /////////////////////////////// */
+/*
+font-family: 'Meow Script', cursive;
+font-family: 'Teko', sans-serif;
+*/
+
+/* /////////////////////////////// */
+/*              LOADER             */
+/* /////////////////////////////// */
+.loader{ position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #212121; z-index: 999; }
+.conteneurSVG{ display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
+	width: 77px; height: 77px; }
+
+/* /////////////////////////////// */
+/*               LEGAL             */
+/* /////////////////////////////// */
+.legal{ position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 499; user-select: none; 
+	background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/background/legal_bg.jpg'); 
+	background-repeat: no-repeat; background-size: cover; background-position: center center; }
+.innerLegal{ position: absolute; width: 90%; max-width: 380px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.logoWFLegal{ width: 80%; margin: 0 auto 40px auto; }
+.logoWFLegal img{ display: block; width: 100%; object-fit: contain; }
+.questionLegal{ margin: 0 0 20px 0; font-size: 32px; color: white; text-transform: uppercase; text-align: center; 
+	text-transform: uppercase; font-weight: 400; }
+.choixLegal{ width: 100%; margin: 0 0 30px 0; text-align: center; font-family: 'Meow Script', cursive !important; }
+.choixLegal span{ display: inline-block; width: 40px; height: 2px; background-color: white; }
+.choixLegal p{ display: inline-block; padding: 0 20px; font-size: 32px; vertical-align: middle;  color: white; }
+.zoneReponse{ text-align: center; }
+.reponseBtn{ display: inline-block; position: relative; width: 100px; height: 50px; margin: 0 20px 0 0; }
+.zoneReponse .reponseBtn:last-child{ margin: 0; }
+.reponseBtn span{ display: block; position: absolute; width: 100%; height: 16px; left: 0; opacity: 1; }
+.reponseBtn span:first-child{ top: 0; border-top: 2px solid white; border-right: 2px solid white; border-left: 2px solid white; }
+.reponseBtn span:last-child{ bottom: 0; border-right: 2px solid white; border-bottom: 2px solid white; border-left: 2px solid white; }
+.reponseBtn a{ display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; line-height: 55px; font-size: 36px; 
+	color: white; text-transform: uppercase; background-color: rgba(255,255,255,0); }
+
+/* /////////////////////////////// */
+/*              HEADER             */
+/* /////////////////////////////// */
+header{ position: fixed; top: 0; left: 0; height: 100%; z-index: 99; }
+.btnMenuMobile{ display: inline-block; position: absolute; top: 10px; left: 10px; padding: 10px; 
+	color: white; font-size: 26px; text-shadow: 0 0 3px rgba(0, 0, 0, 0.7); }
+.mainMenu{ position: absolute; top: 0; left: -250px; width: 200px; height: 100%; background-color: white; 
+	padding: 10px; z-index: 89; }
+.logoMenu{ width: 80%; margin: 10px auto; }
+.logoMenu img{ display: block; width: 100%; object-fit: contain; }
+.fermeMenuMobile{ display: inline-block; position: absolute; top: 0; left: 200px; width: 48px; height: 48px; 
+	padding: 12px 10px; font-size: 26px; color: white; text-shadow: 0 0 3px rgba(0, 0, 0, 0.7); 
+	text-align: center; }
+nav{ width: 90%; margin: 20px auto 10px auto; padding: 10px 0; border-top: 2px solid #212121; 
+	border-bottom: 2px solid #212121; }
+.topLevelMenu{ position: relative; }
+.topLevelMenu li a{ display: block; padding: 7px 0 3px 0; font-size: 20px; background-color: white; color: #212121; 
+	text-transform: uppercase; text-align: center; transition: 0.35s background-color ease, 0.35s color ease; }
+.topLevelMenu li a.active{ background-color: #212121 !important; color: white !important }
+.subLevelMenu{ display: none; }
+.socialMenu{ text-align: center; }
+.socialMenu a{ display: inline-block; width: 40px; height: 40px; line-height: 40px; margin: 0 10px 0 0; 
+	text-align: center; background-color: white; color: #212121; border: 2px solid #212121; }
+.socialMenu a:last-child{ margin: 0; }
+.madeBy{ position: absolute; width: 100%; left: 0; bottom: 0; padding: 10px; text-align: center; }
+.madeBy span{ font-size: 14px; text-transform: uppercase; }
+.madeBy a{ display: block; text-align: center; padding: 5px 0 0 0; color: #212121; letter-spacing: 3px; 
+	text-transform: uppercase; font-size: 18px; }
+.madeBy a i{ font-size: 13px; }
+.overlayMobile{ display: none; position: absolute; width: 999px; height: 100%; 
+	background-color: rgba(0, 0, 0, 0.7); z-index: 9; }
+
+/* /////////////////////////////// */
+/*               MAIN              */
+/* /////////////////////////////// */
+main{ position: relative; width: 100%; height: 100%; overflow-x: hidden; transition: 0.5s margin ease; }
+main.menuMobileOuvert{ margin: 0 0 0 200px; }
+/* Bloc gauche */
+.blocGauche{ width: 100%; min-height: 250px; text-align: center; 
+	background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/background/bg_beer.jpg') no-repeat; 
+	background-size: cover; background-position: center; }
+.innerBlocGauche{ width: 100%; padding: 20px 0; }
+.logoBlocGauche{ width: 160px; margin: auto; }
+.logoBlocGauche:first-child{ width: 200px; }
+.logoBlocGauche img{ display: block; width: 100%; object-fit: contain; }
+.innerBlocGauche span{ display: block; margin: 20px 0 10px 0; font-size: 60px; font-weight: 700; 
+	text-transform: uppercase; text-align: center; color: #212121; }
+html.touchevents .ombreBloc{ box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2); }
+/* Bloc gauche => Slider */
+.sliderBouteilles{ width: 100%; height: 315px; position: relative; overflow: hidden; }
+.bouteille{ position: absolute; top: 0; left: 100%; width: 100%; height: 100%; padding: 10px 0 0 0; }
+.photoBouteille{ width: 100%; height: 100%; 
+	background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/bouteilles/berlinerweisse.png') no-repeat;
+	background-position: center; background-size: contain; }
+/* Bloc droit */
+.blocDroit, .blocDroitBas{ position: relative; width: 100%; }
+.blocDroitHaut{ position: relative; width: 100%; height: 250px; }
+.blocDroitHaut > .blocDroitMini{ background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/background/bg_experience.jpg') no-repeat;
+	background-position: center; background-size: 150%; }
+.blocDroitMini{ position: relative; height: 100%; min-height: 250px; }
+.innerBlocDroitMini{ display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
+	width: 90%; max-width: 250px; padding: 10px; }
+.innerBlocDroitMini h2{ display: block; margin: 20px 0 10px 0; font-size: 36px; text-align: center; text-transform: uppercase; color: white; }
+.innerBlocDroitMini h2 span{ display: inline-block; width: 5px; height: 5px; background-color: white; margin: 0 7px; 
+	border-radius: 50%; vertical-align: 25%; }
+.logoBlocMini{ width: 80%; margin: auto; }
+.logoBlocMini img{ display: block; width: 100%; object-fit: contain; }
+.blocDroitBas .blocDroitMini:nth-child(1){ background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/background/bg_ambassador.jpg') no-repeat;
+	background-position: center; background-size: cover; }
+.blocDroitBas .blocDroitMini:nth-child(2){ background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/background/bg_social.jpg') no-repeat;
+	background-position: top center; background-size: cover; }
+.blocDroitBas .blocDroitMini:nth-child(3){ background: url('http://www.graphoeilmultimedia.com/reactDev/whiteFrontier/imagesWWW/background/404_bg.jpg') no-repeat;
+	background-position: top center; background-size: cover; }
+
+/* /////////////////////////////// */
+/*     >= 375px | iPhone 6,7,8     */
+/* /////////////////////////////// */
+@media only screen and (min-width: 375px){
+	/* Legal */
+	.questionLegal{ font-size: 36px; }
+	.choixLegal p{ font-size: 36px; }
+}
+
+/* /////////////////////////////// */
+/*     >= 768px | iPad portrait    */
+/* /////////////////////////////// */
+@media only screen and (min-width: 768px){
+	/* Legal */
+	.logoWFLegal{ width: 100%; }
+	.questionLegal{ margin: 0 0 30px 0; font-size: 40px; }
+	.choixLegal{ margin: 0 0 40px 0; }
+	.reponseBtn{ width: 110px; height: 60px; }
+	.reponseBtn a{ font-size: 42px; line-height: 65px; }
+	/* Header */
+	.btnMenuMobile, .fermeMenuMobile, .overlayMobile{ display: none; }
+	.mainMenu{ left: 0; }
+	.logoMenu{ margin: 30px auto 10px auto; }
+	nav{ margin-top: 50px; }
+	.topLevelMenu li a{ margin: 10px 0; font-size: 22px; }
+	/* Main */
+	main{ overflow: hidden; }
+	.content{ position: absolute; width: calc(100% - 200px); height: 100%; top: 0; left: 200px; }
+	.blocGauche{ position: absolute; width: 40%; height: 100%; top: 0; left: 0; background-size: cover; }
+	.blocDroit{ position: absolute; width: 60%; height: 100%; top: 0; left: 40%; }
+	.innerBlocGauche{ position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+	.sliderBouteilles{ height: 500px; }
+	.blocDroitHaut{ height: 35%; }
+	.blocDroitHaut > .blocDroitMini{ background-size: cover; }
+	.blocDroitMini{ min-height: 0; }
+	.blocDroitBas{ height: 65%; }
+	.blocDroitBas .blocDroitMini{ position: absolute; width: 100%; height: 33.33%; left: 0; }
+	.blocDroitBas .blocDroitMini:nth-child(1){ top: 0; }
+	.blocDroitBas .blocDroitMini:nth-child(2){ top: 33.33%; }
+	.blocDroitBas .blocDroitMini:nth-child(3){ top: 66.66%; }
+}
+
+/* /////////////////////////////// */
+/*   >= 1024px | iPadPro portrait  */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1024px){
+	/* Header */
+	.mainMenu{ width: 220px; }
+	.logoMenu{ margin-top: 10px; }
+	nav{ margin-top: 30px; }
+	/* Main */
+	.blocGauche{ width: 45%; }
+	.blocDroit{ width: 55%; left: 45%; }
+	.blocDroitHaut, .blocDroitBas{ height: 50%; }
+	.blocDroitBas .blocDroitMini:nth-child(1){ width: 50%; height: 100%; }
+	.blocDroitBas .blocDroitMini:nth-child(2){ top: 0; left: 50%; width: 50%; height: 50%; }
+	.blocDroitBas .blocDroitMini:nth-child(3){ top: 50%; left: 50%; width: 50%; height: 50%; }
+	
+}
+
+/* /////////////////////////////// */
+/*  >= 1366px | iPadPro & Laptop   */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1366px){
+	/* Legal */
+	html.no-touchevents .reponseBtn span{ transition: 0.35s transform ease, 0.35s opacity ease; }
+	html.no-touchevents .reponseBtn:hover span:first-child{ transform: translateY(-20px); opacity: 0; }
+	html.no-touchevents .reponseBtn:hover span:last-child{ transform: translateY(20px); opacity: 0; }
+	html.no-touchevents .reponseBtn a{ transition: 0.35s background-color ease, 0.35s color ease; }
+	html.no-touchevents .reponseBtn:hover a{ background-color: rgba(255,255,255,1); color: #212121; }
+	/* Header */
+	html.no-touchevents li a:hover{ background-color: #dfe6e9; }
+	html.no-touchevents .subLevelMenu{ display: inline-block; position: absolute; top: 32px; left: 200px; 
+		width: 220px; background-color: white; opacity: 0; transition: 0.35s opacity ease; }
+	html.no-touchevents .topLevelMenu > li:hover > .subLevelMenu{ opacity: 1; }
+	html.no-touchevents .socialMenu a{ transition: 0.35s background-color ease; }
+	html.no-touchevents .socialMenu a:hover{ background-color: #dfe6e9; }
+	/* Main */
+	html.no-touchevents .ombreBloc{ box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3); 
+		transition: 0.5s box-shadow ease; cursor: pointer; }
+	html.no-touchevents .ombreBloc:hover{ box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1); }
+}
